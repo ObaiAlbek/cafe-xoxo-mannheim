@@ -9,6 +9,14 @@ interface HeroProps {
 
 export function Hero({ onOpenReservation }: HeroProps) {
   
+  // Funktion zum sanften Scrollen
+  const scrollToMenu = () => {
+    const menuSection = document.getElementById('menu-section');
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const petals = useMemo(() => {
     return Array.from({ length: 20 }).map((_, i) => ({
       id: i,
@@ -23,7 +31,7 @@ export function Hero({ onOpenReservation }: HeroProps) {
     <section className="relative min-h-screen w-full flex items-center bg-white overflow-hidden">
       
       {/* --- HINTERGRUND EFFEKT: BLÜTEN REGEN --- */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
         {petals.map((petal) => (
           <motion.div
             key={petal.id}
@@ -51,10 +59,7 @@ export function Hero({ onOpenReservation }: HeroProps) {
 
       <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen relative z-10">
         
-        {/* LINKE SEITE - TEXT 
-            Mobil: order-2 (Kommt als Zweites, UNTER dem Bild)
-            Desktop: lg:order-1 (Kommt als Erstes, LINKS)
-        */}
+        {/* LINKE SEITE - TEXT */}
         <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0 order-2 lg:order-1">
           
           <FadeIn delay={0.1}>
@@ -96,7 +101,14 @@ export function Hero({ onOpenReservation }: HeroProps) {
               </motion.div>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-2 border-pink-400 text-pink-400 hover:bg-pink-50 px-10 py-6 h-auto rounded-full transition-all" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', fontWeight: '600' }}>
+                {/* HIER IST DIE ÄNDERUNG: onClick={scrollToMenu} hinzugefügt */}
+                <Button 
+                  onClick={scrollToMenu}
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-pink-400 text-pink-400 hover:bg-pink-50 px-10 py-6 h-auto rounded-full transition-all" 
+                  style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', fontWeight: '600' }}
+                >
                   Speisekarte Ansehen
                 </Button>
               </motion.div>
@@ -110,23 +122,18 @@ export function Hero({ onOpenReservation }: HeroProps) {
           </FadeIn>
         </div>
 
-        {/* RECHTE SEITE - BILD 
-            Mobil: order-1 (Kommt als Erstes, GANZ OBEN)
-            Desktop: lg:order-2 (Kommt als Zweites, RECHTS)
-        */}
+        {/* RECHTE SEITE - BILD */}
         <div className="relative h-[50vh] lg:h-auto lg:min-h-screen overflow-hidden order-1 lg:order-2">
           <div className="absolute inset-0 w-full h-full"> 
             
-            {/* Dein Hero Bild */}
             <img
-               src="https://images.unsplash.com/photo-1749989884588-9311dfe94038?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGNvbG9yZnVsJTIwZHJpbmslMjBmbG93ZXIlMjB3YWxsfGVufDF8fHx8MTc2NzY0MDUwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="/assets/blumenWand.jpg"
               alt="Café XOXO Blumenwand"
               className="w-full h-full object-cover"
             />
 
           </div>
 
-          {/* Der Verlauf (Fade) */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
         </div>

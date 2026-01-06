@@ -15,14 +15,14 @@ const experiences = [
     title: 'Gute Stimmung',
     description: 'Positive Energie in jeder Ecke',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1612452556802-f9e9ab097eaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0ZWwlMjBjYWZlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY3NjQwNTA2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/guteStimmung.jpg',
   },
   {
     id: 3,
     title: 'Ästhetische Momente',
     description: 'Jedes Detail für Erinnerungen gestaltet',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1673646959767-1f87b64baf36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwbGVtb25hZGUlMjBkcmlua3xlbnwxfHx8fDE3Njc1NDA3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/assets/AesthetischeMomente.jpg',
   },
 ];
 

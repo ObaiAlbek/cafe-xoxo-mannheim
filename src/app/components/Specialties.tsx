@@ -1,32 +1,28 @@
 import { motion } from "framer-motion";
-import { TiltCard } from './TiltCard'; // Stellen sicher, dass der Import stimmt
-import { FadeIn } from './FadeIn'; // Falls du FadeIn noch nicht hast, lösch diesen Import einfach
+import { TiltCard } from './TiltCard'; 
+import { FadeIn } from './FadeIn';
 
 // --- Daten ---
 const specialties = [
   {
     id: 1,
-    name: 'Belgische Waffeln',
-    description: 'Fluffige Waffeln mit frischen Beeren & Schlagsahne',
-    price: '18€',
-    image: 'https://images.unsplash.com/photo-1543393287-9f0212fd245a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YWZmbGVzJTIwYmVycmllcyUyMGJydW5jaHxlbnwxfHx8fDE3Njc2NDA1MDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    name: 'Dubai Brioche French Toast',
+    description: 'Viraler Hit: Fluffiges Brioche mit Pistaziencreme, knusprigem Knafeh, Schokolade & Vanilleeis.',
+    image: '/assets/Dubai-Brioch.jpg', 
   },
   {
     id: 2,
-    name: 'Avocado Toast',
-    description: 'Zerdrückte Avocado auf Sauerteigbrot mit Kirschtomaten',
-    price: '16€',
-    image: 'https://images.unsplash.com/photo-1665176887695-024ffbbbf51b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdm9jYWRvJTIwdG9hc3QlMjBwbGF0ZXxlbnwxfHx8fDE3Njc2Mzk4OTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    name: 'Guacamole Röstbrot',
+    description: 'Mit Guacamole Aufstrich, frischer Avocado, Rucola und Kirschtomaten.',
+    image: '/assets/AvocadoToast.jpg'
   },
   {
     id: 3,
-    name: 'Pink Lemonade',
-    description: 'Erfrischende hausgemachte Limonade mit frischen Beeren',
-    price: '8€',
-    image: 'https://images.unsplash.com/photo-1673646959767-1f87b64baf36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwbGVtb25hZGUlMjBkcmlua3xlbnwxfHx8fDE3Njc1NDA3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    name: 'Dreams Bowl',
+    description: 'Mit Mango, griechischer Joghurt, Kokosmilch, Hafermilch, Kokosnuss.',
+    image: '/assets/bowls.jpg',
   },
 ];
-
 // --- Die Karte mit 3D Effekt ---
 function SpecialtyCard({ specialty }: { specialty: any }) {
   return (

@@ -15,7 +15,7 @@ export function AboutUs() {
             <FadeIn delay={0.2}>
               <div className="relative overflow-hidden rounded-[2rem] aspect-[3/4] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700">
                 <img
-                  src="https://images.unsplash.com/photo-1497729019230-f30736e9864f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJibGUlMjB0YWJsZSUyMGZvb2R8ZW58MXx8fHwxNzY3NjQwNTA2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/assets/about-foto.jpg"
                   alt="Beautiful plated food on marble"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />

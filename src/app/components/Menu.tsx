@@ -71,12 +71,12 @@ const menuItems = [
   {
     id: 302, category: 'ciabatta', name: 'Ciabatta French Kiss', price: '10,60€',
     description: 'Mit Kräuteröl und Cheddar.',
-    image: '/assets/Ciabatta French Kiss.webp',
+    image: '/assets/Ciabatta French Kiss.jpg',
   },
   {
     id: 303, category: 'ciabatta', name: 'Ciabatta Orient', price: '10,90€',
     description: 'Mit Chiliöl, Cheddar und gebratenen Sucukscheiben.',
-    image: '/assets/Ciabatta Orient.webp',
+    image: '/assets/Ciabatta Orient.jpg',
   },
   {
     id: 304, category: 'ciabatta', name: 'Ciabatta Parma', price: '10,90€',
@@ -86,7 +86,7 @@ const menuItems = [
   {
     id: 305, category: 'ciabatta', name: 'Ciabatta Quattro Formaggi', price: '10,90€',
     description: 'Mit Cheddar, Hirtenkäse, Grana Padano und Gorgonzola.',
-    image: '/assets/Ciabatta Quattro Formaggi.webp',
+    image: '/assets/Ciabatta Quattro Formaggi.jpg',
   },
 
   // --- TRAUM WAFFELN ---
@@ -113,7 +113,7 @@ const menuItems = [
   {
     id: 405, category: 'waffles', name: 'Waffel mit Puderzucker', price: '6,90€',
     description: 'Der Klassiker.',
-    image: '/assets/Waffel mit Puderzucker.webp',
+    image: '/assets/Waffel mit Puderzucker.jpg',
   },
 
   // --- MATCHA & DRINKS ---
@@ -135,12 +135,12 @@ const menuItems = [
   {
     id: 504, category: 'drinks', name: 'Pink Coco', price: '5,90€',
     description: 'Hibiskustee, Kokosnussmilch, Holunderblüte - ein rosa Traum.',
-    image: '/assets/Pink Coco.webp',
+    image: '/assets/Pink Coco.jpg',
   },
   {
     id: 505, category: 'drinks', name: 'Homemade Lemonade', price: '5,90€',
     description: 'Hausgemachte Limetten/Ingwer Limonade.',
-    image: '/assets/Homemade Lemonade.webp',
+    image: '/assets/Homemade Lemonade.jpg',
   },
 ];
 
