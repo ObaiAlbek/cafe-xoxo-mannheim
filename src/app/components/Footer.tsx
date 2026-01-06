@@ -6,13 +6,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         {/* Brand Name */}
         <div className="text-center mb-12">
-          <h3 
+          <h3
             className="text-foreground mb-2"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: '600', letterSpacing: '-0.01em' }}
           >
             Café XOXO
           </h3>
-          <p 
+          <p
             className="text-primary"
             style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.75rem' }}
           >
@@ -26,14 +26,14 @@ export function Footer() {
           <div>
             <div className="flex items-center justify-center gap-2 mb-4">
               <Clock className="w-5 h-5 text-primary" />
-              <h4 
+              <h4
                 className="text-foreground"
                 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.125rem', fontWeight: '600' }}
               >
                 Öffnungszeiten
               </h4>
             </div>
-            <div 
+            <div
               className="text-muted-foreground space-y-2"
               style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', lineHeight: '1.6' }}
             >
@@ -48,20 +48,20 @@ export function Footer() {
           <div>
             <div className="flex items-center justify-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-primary" />
-              <h4 
+              <h4
                 className="text-foreground"
                 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.125rem', fontWeight: '600' }}
               >
                 Besuche Uns
               </h4>
             </div>
-            <div 
+            <div
               className="text-muted-foreground space-y-2"
               style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', lineHeight: '1.6' }}
             >
               <p>N5, 15</p>
               <p>68161 Mannheim</p>
-              
+
               <p>Deutschland</p>
             </div>
           </div>
@@ -70,20 +70,20 @@ export function Footer() {
           <div>
             <div className="flex items-center justify-center gap-2 mb-4">
               <Instagram className="w-5 h-5 text-primary" />
-              <h4 
+              <h4
                 className="text-foreground"
                 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.125rem', fontWeight: '600' }}
               >
                 Folge Uns
               </h4>
             </div>
-            <div 
+            <div
               className="text-muted-foreground"
               style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', lineHeight: '1.6' }}
             >
-              <a 
-                href="https://www.instagram.com/cafe_xoxo_hugsandkisses?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/cafe_xoxo_hugsandkisses?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-accent transition-colors inline-block font-medium"
               >
@@ -99,7 +99,7 @@ export function Footer() {
         {/* Decorative Divider */}
         <div className="flex items-center justify-center gap-4 my-12">
           <div className="h-px w-24 bg-primary/30"></div>
-          <p 
+          <p
             className="text-accent"
             style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.75rem' }}
           >
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div 
+        <div
           className="text-center text-muted-foreground"
           style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '0.875rem' }}
         >

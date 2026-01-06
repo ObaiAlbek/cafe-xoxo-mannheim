@@ -1,6 +1,19 @@
 import { Sparkles, Camera, Heart } from 'lucide-react';
 import { motion } from "framer-motion";
-import { FadeIn } from './FadeIn';
+
+function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 const experiences = [
   {
@@ -28,9 +41,9 @@ const experiences = [
 
 export function XOXOExperience() {
   return (
-    <section className="py-24 px-6 bg-pink-50/30">
+    <section className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+
         <div className="text-center mb-16">
           <FadeIn>
             <p className="text-pink-400 mb-3" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2rem' }}>
@@ -45,26 +58,26 @@ export function XOXOExperience() {
           </FadeIn>
         </div>
 
-        {/* Instagram-style Grid */}
+        {/* Grid untereinander */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {experiences.map((experience, index) => (
             <FadeIn key={experience.id} delay={index * 0.2}>
-              <motion.div 
+              <motion.div
                 className="group relative overflow-hidden rounded-3xl aspect-square bg-white shadow-md cursor-pointer"
-                whileHover={{ y: -10, scale: 1.02 }} // Hover Effekt: Geht hoch und wird größer
-                transition={{ duration: 0.4 }}
+                // DESKTOP: Hover
+                whileHover={{ y: -10, scale: 1.02 }}
+                // HANDY: Tap (Drücken)
+                whileTap={{ scale: 0.95, rotate: 1 }}
+                transition={{ duration: 0.2 }}
               >
-                {/* Image */}
                 <img
                   src={experience.image}
                   alt={experience.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
-                {/* Overlay */}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-                
-                {/* Content */}
+
                 <div className="absolute inset-0 flex flex-col items-center justify-end p-8 text-white">
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -73,7 +86,7 @@ export function XOXOExperience() {
                   >
                     <experience.icon className="w-10 h-10 mb-4 text-pink-300" strokeWidth={1.5} />
                   </motion.div>
-                  
+
                   <h3 className="mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: '600' }}>
                     {experience.title}
                   </h3>
@@ -86,7 +99,6 @@ export function XOXOExperience() {
           ))}
         </div>
 
-        {/* Bottom Accent */}
         <FadeIn delay={0.6} className="text-center mt-16">
           <p className="text-pink-400" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.75rem' }}>
             #CafeXOXO #BrunchGoals

@@ -1,89 +1,122 @@
 import { motion } from "framer-motion";
-import { FadeIn } from './FadeIn';
 
 export function AboutUs() {
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut" as const
+      }
+    }
+  };
+
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-pink-50/30 overflow-hidden">
+    // FIX: bg-transparent (statt bg-gradient-to-b)
+    <section className="py-24 px-6 bg-transparent overflow-hidden relative">
+
+      {/* Dekoratives Hintergrund-Element (optional behalten für Tiefe) */}
+      <div className="absolute top-20 right-0 w-64 h-64 bg-pink-100/50 rounded-full blur-3xl -z-10" />
+
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          {/* DER TRICK MIT "ORDER":
-             - order-1: Auf Handy an Position 1 (Zuerst)
-             - lg:order-2: Auf Desktop an Position 2 (Rechts)
-          */}
-          <div className="order-1 lg:order-2">
-            <FadeIn delay={0.2}>
-              <div className="relative overflow-hidden rounded-[2rem] aspect-[3/4] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+          {/* --- BILD BEREICH --- */}
+          <motion.div
+            className="order-2 lg:order-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariant}
+          >
+            <div className="relative group">
+              <div className="absolute inset-0 bg-pink-200 rounded-[2.5rem] rotate-6 scale-95 group-hover:rotate-3 transition-transform duration-700 ease-out" />
+
+              <div className="relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-700 ease-out">
                 <img
                   src="/assets/about-foto.jpg"
                   alt="Beautiful plated food on marble"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
                 />
-                {/* Glanz-Effekt */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </motion.div>
 
-          {/* TEXT BEREICH:
-             - order-2: Auf Handy an Position 2 (Danach)
-             - lg:order-1: Auf Desktop an Position 1 (Links)
-          */}
-          <div className="order-2 lg:order-1 space-y-8">
-            <FadeIn delay={0.1}>
-              <p 
-                className="text-pink-400"
-                style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2rem' }}
+          {/* --- TEXT BEREICH --- */}
+          <motion.div
+            className="order-1 lg:order-1 space-y-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ staggerChildren: 0.2 }}
+          >
+
+            <motion.div variants={fadeUpVariant}>
+              <p
+                className="text-pink-400 mb-2"
+                style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.5rem' }}
               >
                 Unsere Philosophie
               </p>
-              <h2 
-                className="text-gray-900 mt-2"
-                style={{ 
-                  fontFamily: "'Cormorant Garamond', serif", 
-                  fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-                  lineHeight: '1.2', 
+              <h2
+                className="text-gray-900 leading-tight"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 'clamp(3rem, 5vw, 4.5rem)',
                   fontWeight: '600',
-                  letterSpacing: '-0.01em'
                 }}
               >
-                Wo Schönheit<br />auf Geschmack trifft
+                Wo Schönheit<br />
+                <span className="text-pink-300/80">auf Geschmack trifft</span>
               </h2>
-            </FadeIn>
+            </motion.div>
 
-            <FadeIn delay={0.3}>
-              <div 
-                className="text-gray-500 space-y-6"
-                style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.125rem', lineHeight: '1.8' }}
-              >
-                <p>
-                  Im Café XOXO Hugs & Kisses glauben wir, dass Frühstück ein Erlebnis sein sollte—ein Moment voller Schönheit, Verbindung und purer Freude.
-                </p>
-                <p>
-                  Jedes Gericht ist so gestaltet, dass es genauso atemberaubend aussieht wie es schmeckt. Von unseren Blumenwänden bis zu unseren Marmortischen ist jedes Detail für perfekte Instagram-Momente entworfen.
-                </p>
-                <p>
-                  Wir verwenden nur die besten Zutaten und kreieren farbenfrohe, lebendige Gerichte, die genauso fantastisch schmecken wie sie aussehen. Denn du verdienst nichts weniger als das Außergewöhnliche.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
+            <motion.div
+              className="text-gray-600 space-y-6 text-lg font-light leading-relaxed"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              variants={fadeUpVariant}
+            >
+              <p>
+                Im <span className="font-medium text-pink-400">Café XOXO Hugs & Kisses</span> glauben wir, dass Frühstück ein Erlebnis sein sollte — ein Moment voller Schönheit, Verbindung und purer Freude.
+              </p>
+              <p>
+                Jedes Gericht ist so gestaltet, dass es genauso atemberaubend aussieht wie es schmeckt. Von unseren Blumenwänden bis zu unseren Marmortischen ist jedes Detail für perfekte Instagram-Momente entworfen.
+              </p>
+              <p>
+                Wir verwenden nur die besten Zutaten und kreieren farbenfrohe, lebendige Gerichte. Denn du verdienst nichts weniger als das Außergewöhnliche.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUpVariant} className="pt-4">
+              <span className="text-pink-300 tracking-widest uppercase text-sm font-semibold border-b-2 border-pink-200 pb-1">
+                Made with Love
+              </span>
+            </motion.div>
+
+          </motion.div>
 
         </div>
 
-        {/* XOXO TRENNER */}
-        <FadeIn delay={0.4}>
-          <div className="flex items-center justify-center gap-4 mt-16 lg:mt-24">
-            <div className="h-px w-16 bg-pink-200"></div>
-            <p 
-              className="text-pink-300"
-              style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2rem' }}
-            >
-              xoxo
-            </p>
-            <div className="h-px w-16 bg-pink-200"></div>
-          </div>
-        </FadeIn>
+        {/* --- XOXO TRENNER --- */}
+        <motion.div
+          className="flex items-center justify-center gap-6 mt-24 opacity-60"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.6, scale: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="h-px w-12 sm:w-24 bg-gradient-to-r from-transparent to-pink-300"></div>
+          <p
+            className="text-pink-300 transform -rotate-6"
+            style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.5rem' }}
+          >
+            xoxo
+          </p>
+          <div className="h-px w-12 sm:w-24 bg-gradient-to-l from-transparent to-pink-300"></div>
+        </motion.div>
 
       </div>
     </section>

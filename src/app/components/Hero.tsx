@@ -1,4 +1,4 @@
-import { useMemo } from 'react'; 
+import { useMemo } from 'react';
 import { Button } from './ui/button';
 import { FadeIn } from './FadeIn';
 import { motion } from 'framer-motion';
@@ -7,8 +7,8 @@ interface HeroProps {
   onOpenReservation: () => void;
 }
 
-export function Hero({ onOpenReservation }: HeroProps) {
-  
+export function Hero() {
+
   // Funktion zum sanften Scrollen
   const scrollToMenu = () => {
     const menuSection = document.getElementById('menu-section');
@@ -25,29 +25,29 @@ export function Hero({ onOpenReservation }: HeroProps) {
       duration: 5 + Math.random() * 5,
       size: 10 + Math.random() * 20
     }));
-  }, []); 
+  }, []);
 
   return (
     <section className="relative min-h-screen w-full flex items-center bg-white overflow-hidden">
-      
+
       {/* --- HINTERGRUND EFFEKT: BLÜTEN REGEN --- */}
       <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
         {petals.map((petal) => (
           <motion.div
             key={petal.id}
             className="absolute -top-10 text-pink-300/60"
-            style={{ 
-              left: petal.left, 
-              fontSize: `${petal.size}px` 
+            style={{
+              left: petal.left,
+              fontSize: `${petal.size}px`
             }}
-            animate={{ 
+            animate={{
               y: ['-10vh', '110vh'],
               rotate: [0, 360],
               x: [-20, 20, -20]
             }}
-            transition={{ 
-              duration: petal.duration, 
-              repeat: Infinity, 
+            transition={{
+              duration: petal.duration,
+              repeat: Infinity,
               delay: petal.delay,
               ease: "linear"
             }}
@@ -58,55 +58,46 @@ export function Hero({ onOpenReservation }: HeroProps) {
       </div>
 
       <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen relative z-10">
-        
+
         {/* LINKE SEITE - TEXT */}
         <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-0 order-2 lg:order-1">
-          
+
           <FadeIn delay={0.1}>
             <p className="text-pink-400 mb-4" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.75rem' }}>
               Willkommen bei
             </p>
           </FadeIn>
-          
+
           <FadeIn delay={0.2}>
             <h1 className="text-gray-900 mb-6" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3.5rem, 8vw, 7rem)', lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.02em' }}>
               Frühstück &<br />Brunch Träume
             </h1>
           </FadeIn>
-          
+
           <FadeIn delay={0.3}>
             <h2 className="text-pink-400 mb-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: '400', fontStyle: 'italic' }}>
               Café XOXO Hugs & Kisses
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.4}>
             <p className="text-gray-500 mb-10 max-w-lg relative z-20" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.125rem', lineHeight: '1.8' }}>
               Wo jeder Moment Instagram-würdig ist und jeder Bissen pure Glückseligkeit.
             </p>
           </FadeIn>
-          
+
           {/* BUTTONS */}
           <FadeIn delay={0.5}>
             <div className="flex flex-col sm:flex-row gap-4 relative z-20">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  onClick={onOpenReservation}
-                  size="lg" 
-                  className="bg-pink-400 hover:bg-pink-500 text-white px-10 py-6 h-auto rounded-full shadow-lg transition-all" 
-                  style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', fontWeight: '600' }}
-                >
-                  Tisch Reservieren
-                </Button>
-              </motion.div>
-              
+
+
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 {/* HIER IST DIE ÄNDERUNG: onClick={scrollToMenu} hinzugefügt */}
-                <Button 
+                <Button
                   onClick={scrollToMenu}
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-pink-400 text-pink-400 hover:bg-pink-50 px-10 py-6 h-auto rounded-full transition-all" 
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-pink-400 text-pink-400 hover:bg-pink-50 px-10 py-6 h-auto rounded-full transition-all"
                   style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1rem', fontWeight: '600' }}
                 >
                   Speisekarte Ansehen
@@ -114,7 +105,7 @@ export function Hero({ onOpenReservation }: HeroProps) {
               </motion.div>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.6}>
             <p className="text-pink-300 mt-12" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.5rem' }}>
               Made With Love✨
@@ -124,8 +115,8 @@ export function Hero({ onOpenReservation }: HeroProps) {
 
         {/* RECHTE SEITE - BILD */}
         <div className="relative h-[50vh] lg:h-auto lg:min-h-screen overflow-hidden order-1 lg:order-2">
-          <div className="absolute inset-0 w-full h-full"> 
-            
+          <div className="absolute inset-0 w-full h-full">
+
             <img
               src="/assets/blumenWand.jpg"
               alt="Café XOXO Blumenwand"
