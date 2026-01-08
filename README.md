@@ -3,6 +3,11 @@
 Eine moderne, High-Fidelity Landing Page für das Café XOXO in Mannheim. Dieses Projekt fokussiert sich auf "Instagram-würdiges" Design, flüssige Animationen und eine erstklassige User Experience (UX) auf Mobile und Desktop.
 
 🔗 **Live Demo:** [Hier klicken](https://cafe-xoxo-mannheim.vercel.app/)
+<p align="center">
+  <a href="https://www.figma.com/design/bxiFm5CJMY5vDx1PXpqoVL/cafe-xoxo-Hugs---kisses?node-id=0-1&t=UF7cNTnsRB7Y7HDT-1">
+    <img src="https://img.shields.io/badge/🎨_Design_in_Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma Design" />
+  </a>
+</p>
 
 ## ✨ Features
 
