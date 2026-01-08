@@ -2,7 +2,7 @@
 
 Eine moderne, High-Fidelity Landing Page für das Café XOXO in Mannheim. Dieses Projekt fokussiert sich auf "Instagram-würdiges" Design, flüssige Animationen und eine erstklassige User Experience (UX) auf Mobile und Desktop.
 
-🔗 **Live Demo:** [Hier klicken](https://cafe-xoxo-hugsandkisses.netlify.app/)
+🔗 **Live Demo:** [Hier klicken](https://cafe-xoxo-mannheim.vercel.app/)
 
 ## ✨ Features
 
