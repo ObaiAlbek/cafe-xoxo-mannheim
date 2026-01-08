@@ -24,7 +24,7 @@ Dieses Projekt wurde mit modernsten Web-Technologien entwickelt:
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Animationen:** [Framer Motion](https://www.framer.com/motion/)
 * **Icons:** Lucide React
-* **Hosting & Forms:** Netlify
+* **Hosting & Forms:** vercel
 
 ## 🚀 Installation & Setup
 
